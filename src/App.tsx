@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FC, useState } from 'react';
+import {
+  Card,
+  Box,
+  Stack,
+  Typography,
+  Avatar,
+  IconButton,
+  Divider,
+  Chip,
+  Switch,
+} from '@mui/material';
 
-function App() {
+const App: FC = () => {
+  const [currentTab, setCurrentTab] = useState<string>();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <Card>
+        <Box sx={{ p: 2, display: 'flex' }}>
+          <Avatar variant="rounded" src="avatar1.jpg" />
+          <Stack spacing={0.5}>
+            <Typography fontWeight={700}>Michael Scott</Typography>
+            <Typography variant="body2" color="text.secondary">
+              Scranton, PA
+            </Typography>
+          </Stack>
+          <IconButton></IconButton>
+        </Box>
+        <Divider />
+        <Stack
+          direction="row"
+          alignItems="center"
+          justifyContent="space-between"
+          sx={{ px: 2, py: 1, bgcolor: 'background.default' }}
         >
-          Learn React
-        </a>
-      </header>
+          <Chip label="Active account" />
+          <Switch />
+        </Stack>
+      </Card>
     </div>
   );
-}
+};
 
 export default App;
