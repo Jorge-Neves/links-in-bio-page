@@ -11,11 +11,19 @@ import {
   Switch,
 } from '@mui/material';
 
+enum TabOptions {
+  SocialMedia = 'Social Media',
+  OnlineLEarning = 'Online Learning',
+  LearningApps = 'Learning Apps',
+  ProblemSolving = 'Problem Solving',
+  Productivity = 'Productivity',
+}
+
 const App: FC = () => {
-  const [currentTab, setCurrentTab] = useState<string>();
+  const [currentTab, setCurrentTab] = useState<TabOptions>();
 
   return (
-    <div className="App">
+    <Stack>
       <Card>
         <Box sx={{ p: 2, display: 'flex' }}>
           <Avatar variant="rounded" src="avatar1.jpg" />
@@ -38,7 +46,7 @@ const App: FC = () => {
           <Switch />
         </Stack>
       </Card>
-    </div>
+    </Stack>
   );
 };
 
